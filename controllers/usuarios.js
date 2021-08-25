@@ -1,9 +1,9 @@
 const { request, response } = require('express');//Requerimos la funcion request y response solo para que nos sirva de ayuda para autocompletar
 
-const usuarioGet = (req = request, res= response) => {
+const usuariosGet = (req = request, res= response) => {
 
     // const query = req.query;
-    const { q, nombre = 'No Name', apikey, page = 1, limit } = req.query;
+    const { q, nombre = 'No Name', apikey, page = 1, limit } = req.query;//Parametros Query
 
     res.json({
         // ok: true, No es necesario enviarlo porque con la respuesta se envia el status que nos sirve para saber el estado de la respuesta
@@ -32,7 +32,7 @@ const usuariosPost = (req, res) => {
 const usuariosPut = (req = request, res) => {
 
     //Recibir parametros enviados en el endpoint /:id
-    const { id } = req.params;
+    const { id } = req.params;//Parametros de segmento
 
 
     res.status(500).json({
@@ -57,7 +57,7 @@ const usuariosDelete =  (req, res) => {
 }
 
 module.exports = {
-    usuarioGet,
+    usuariosGet,
     usuariosPost,
     usuariosPut,
     usuariosPatch,
